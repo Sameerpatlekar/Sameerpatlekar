@@ -8,5 +8,5 @@ spec:
     environment: local
   ports:
     - nodePort: 30123
-      port: 8080
+      port: 80
       targetport: 80
