@@ -4,9 +4,9 @@ metadata:
   name: NodePort-server
 spec:
   type: NodePort
-  Selector:
+  selector:
     environment: local
   ports:
-    - NodePort: 30123
+    - nodePort: 30123
       port: 8080
       targetport: 80
