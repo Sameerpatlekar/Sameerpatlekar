@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIp
   selector:
-    app: xyz
+    app: abc
   port:
     - name: cluster
       port: 81
