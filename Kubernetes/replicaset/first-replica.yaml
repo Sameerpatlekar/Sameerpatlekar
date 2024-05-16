@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx-replica
+  name: frontend
   labels:
-    app: xyz
+    app: guestbook
     tier: frontend
 spec:
   # modify replicas according to your case
@@ -15,30 +15,10 @@ spec:
     metadata:
       labels:
         tier: frontend
-    
----
-
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: development-ns
-  labels:
-    name: development
-    tier: frontend
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-ns
-  namespace: development-ns
-  labels:
-    tier: frontend
-spec:
-  containers:
-  - name: nginx
-    image: nginx:1.14
-    ports:
-    - containerPort: 80
+    spec:
+      containers:
+      - name: php-redis
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
 
 
 
