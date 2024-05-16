@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: clusterip-service
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
-    app: abc
-  port:
+    app: xyz
+  ports:
     - name: cluster
-      port: 81
+      port: 8181
       targetPort: 8181
