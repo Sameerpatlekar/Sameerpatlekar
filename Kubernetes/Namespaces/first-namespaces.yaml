@@ -4,23 +4,18 @@ metadata:
   name: development-ns
   labels:
     name: development
-spec:
-  selector:
-    name: sam
-
 ---
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
-  labels:
-    name : sam
+  name: nginx-ns
+  namespace: development-ns
 spec:
   containers:
   - name: nginx
     image: nginx:1.14
     ports:
     - containerPort: 80
+
 
 
