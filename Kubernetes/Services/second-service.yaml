@@ -6,14 +6,7 @@ spec:
   type: ClusterIP
   selector:
     app: xyz
-<<<<<<< HEAD
   ports:
     - name: cluster
       port: 8181
       targetPort: 8181
-=======
-  port:
-    - name: cluster
-      port: 8181
-      targetPort: 8181
->>>>>>> 8dc702082590e47d2c98f23d787a982703b0526b
