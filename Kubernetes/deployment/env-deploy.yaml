@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp-container
+        image: my-webapp:latest
+        env:
+        - name: DATABASE-HOST
+          value: "sameer.cloud"
+        - name: DATABASE_PORT
+          value: "3306"
+        ports:
+        - containerPort: 8080
