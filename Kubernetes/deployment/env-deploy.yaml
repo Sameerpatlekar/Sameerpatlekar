@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webapp-container
-        image: my-webapp:latest
+        image: nginx
         env:
         - name: DATABASE-HOST
           value: "sameer.cloud"
