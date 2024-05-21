@@ -4,7 +4,6 @@ metadata:
   name: my-deploy
 spec:
   replicas: 3
-  nodeName: node01
   selector:
     matchLabels:
       app: deploy-1
@@ -16,6 +15,10 @@ spec:
       containers:
       - name: deploy-container
         image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 80
-    nodeName: node01
+      nodeName: node01
