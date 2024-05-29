@@ -1,0 +1,8 @@
+Install the Amazon EFS CSI Driver:
+
+Add Helm Repository:
+helm repo add aws-efs-csi-driver https://kubernetes-sigs.github.io/aws-efs-csi-driver/
+helm repo update
+
+Install the EFS CSI Driver:
+helm install aws-efs-csi-driver aws-efs-csi-driver/aws-efs-csi-driver --namespace kube-sys
