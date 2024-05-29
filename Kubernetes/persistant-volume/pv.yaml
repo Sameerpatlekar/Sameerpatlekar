@@ -8,8 +8,8 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Recycle
   storageClassName: efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: <file-system-id> # Replace with your EFS File System ID
+    volumeHandle: fs-07be1cd28f3500e00 # Replace with your EFS File System ID
