@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0e879a1b306fffb22"  # Replace with the desired AMI ID
-  instance_type = "t3.micro"
+  ami           = "ami-0c55b159cbfafe1f0"  # Replace with the desired AMI ID
+  instance_type = "t2.micro"
 
   tags = {
-    Name = "first-terrafom-instance"
+    Name = "ExampleInstance"
   }
 
   # Optional: Define a key pair for SSH access
