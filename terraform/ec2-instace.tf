@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "example" {
   ami           = "ami-0e879a1b306fffb22"  # Replace with the desired AMI ID
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "first-terrafom-instance"
