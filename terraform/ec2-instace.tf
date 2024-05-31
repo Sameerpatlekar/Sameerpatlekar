@@ -7,7 +7,7 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ExampleInstance"
+    Name = "my-terraform-Instance"
   }
 
   # Optional: Define a key pair for SSH access
