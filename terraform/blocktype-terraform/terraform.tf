@@ -2,15 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tfstate-bucket"
-
-  tags = {
-    Name = "my-tfstate-bucket"
-    Env = "Dev"
-  }
-}
-
 terraform {
   backend "s3" {
     bucket = "my-tfstate-bucket"
@@ -19,6 +10,14 @@ terraform {
   }
 }
 
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tfstate-bucket"
+
+  tags = {
+    Name = "my-tfstate-bucket"
+    Env = "Dev"
+  }
+}
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow SSH for all network"
