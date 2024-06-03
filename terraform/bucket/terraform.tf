@@ -3,9 +3,9 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "my-tfstate-bucket"
+  bucket = "my-tfstate-bucket-23554433"
 
   tags = {
-    Name = "my-tfstate-bucket"
+    Name = "my-tfstate-bucket-23554433"
   }
 }
