@@ -15,7 +15,6 @@ resource "aws_s3_bucket" "example" {
 
   tags = {
     Name = "my-tfstate-bucket"
-    Env = "Dev"
   }
 }
 
