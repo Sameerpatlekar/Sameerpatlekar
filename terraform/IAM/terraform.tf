@@ -22,5 +22,4 @@ output "admin_access_key_id" {
 
 output "admin_secret_access_key" {
   value     = aws_iam_access_key.admin_access_key.secret
-  sensitive = true
 }
