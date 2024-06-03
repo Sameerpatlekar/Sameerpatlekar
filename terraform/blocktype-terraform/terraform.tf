@@ -4,17 +4,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "my-tfstate-bucket"
+    bucket = "my-tfstate-bucket-23554433"
     key    = "terraform.tfstate"
     region = "us-east-1"
-  }
-}
-
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tfstate-bucket"
-
-  tags = {
-    Name = "my-tfstate-bucket"
   }
 }
 
