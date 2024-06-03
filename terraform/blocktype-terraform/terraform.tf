@@ -18,6 +18,7 @@ resource "aws_s3_bucket" "example" {
     Env = "Dev"
   }
 }
+
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow SSH for all network"
