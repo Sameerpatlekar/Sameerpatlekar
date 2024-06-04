@@ -30,14 +30,4 @@ variable "this_aws_instance_tags" {
      type = string
 }
 
-variable "this_aws_instance_subnet" {
-     type = string
-}
 
-variable "this_sg_vpc_id" {
-     type = string
-}
-
-variable "this_aws_vpc_id" {
-     type = string
-}
