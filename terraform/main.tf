@@ -1,7 +1,7 @@
 provider "aws" {
   region = "us-east-1"
 }
-/*
+
 module "vpc" {
     source = "./module"
     this_vpc_cidr_block = "192.168.0.0/16"
@@ -18,7 +18,7 @@ module "vpc" {
     this_def_Route_example_cidr_block = "0.0.0.0/0"
     this_def_Route_example_tag = "my-igw" 
 } 
-*/
+
 
 module "ec2" {
     source = "./module/ec2"
