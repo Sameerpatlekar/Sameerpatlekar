@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "vpc" {
-    source = "./module"
+    source = "./module/vpc"
     this_vpc_cidr_block = "192.168.0.0/16"
     this_vpc_tags = "my_vpc"
     this_subnet_pub_cidr_block = "192.168.0.0/17"
