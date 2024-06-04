@@ -26,7 +26,7 @@ module "ec2" {
     this_aws_instance_instance_type  = "t2.micro"
     #this_aws_instance_subnet = module.aws_vpc.aws_subnet_this_public
     this_aws_instance_key_name = "ec2-key"
-    this_aws_instance_availability_zone = "us-east-1"
+    this_aws_instance_availability_zone = "us-east-1a"
     this_aws_instance_volume_size = 8
     this_aws_instance_count = 2
     this_aws_instance_user_data_base64 = true
