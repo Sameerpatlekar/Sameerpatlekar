@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build')
+        choice(name: 'DEPLOY_ENV', choices: ['DEV', 'QA', 'PROD'], description: 'Deployment Environment')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests after build')
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building branch: ${params.BRANCH_NAME}"
+                // Add your build steps here
+            }
+        }
+        stage('Test') {
+            when {
+                expression { return params.RUN_TESTS }
+            }
+            steps {
+                echo 'Running tests...'
+                // Add your test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying to environment: ${params.DEPLOY_ENV}"
+                // Add your deploy steps here
+            }
+        }
+    }
+}
