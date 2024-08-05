@@ -1,0 +1,28 @@
+pipeline {
+    agent { label 'my-agent-1' }
+    tools {
+        jdk 'jdk11'          // Name of the JDK installation from Global Tool Configuration
+        maven 'maven'  // Name of the Maven installation from Global Tool Configuration
+    }
+    stages {
+        stage('git checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Sameerpatlekar/studentapp-ui.git'
+            }
+        }
+        stage('maven build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('code analysis n code quality') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn clean package sonar:sonarqube'
+                }
+                
+            }
+            
+        }
+    }
+}
