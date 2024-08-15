@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        
+        stage('git checkout and build') {
+            agent { docker {image 'alpine'}}
+            tools {
+                maven 'maven'
+                jdk 'jdk11'
+                git 'git'       
+            }
+            steps{
+                git 'https://github.com/Sameerpatlekar/studentapp-ui.git'
+                sh 'mvn clean package'
+
+            }           
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                // Add your build steps here
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                // Add your test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add your deploy steps here
+            }
+        }
+    }
+}
