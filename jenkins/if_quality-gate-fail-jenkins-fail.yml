@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    environment {
+        scannerHome = tool 'ALM Sonar';
+    }
+    stages {
+        stage('SCM') {
+            steps {
+                git branch: 'master',
+                    credentialsId: 'github',
+                    url: 'git@github.com:antoine-vigneau-sonarsource/test-js.git'
+            }
+        }
+        stage('Sonarqube Analysis') {
+            steps {
+                withSonarQubeEnv('ALM Prod Sonar') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+}
