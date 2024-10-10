@@ -1,7 +1,5 @@
 ### Hi there 👋
 DevOps Learning Repository
-<!--
-**Sameerpatlekar/Sameerpatlekar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
@@ -28,11 +26,16 @@ Version Control: Git, GitHub
 Kubernetes concepts
 Infrastructure as Code with Terraform and Ansible
 👯 I'm looking to collaborate on
-
 Open-source projects related to DevOps, cloud-native technologies, and automation
 Building scalable and highly available systems
+
 📫 How to reach me
 LinkedIn | sameerpatlekar@outlook.com | GitHub
+
+<!--
+**Sameerpatlekar/Sameerpatlekar** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+
 
 
 
